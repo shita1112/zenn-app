@@ -51,6 +51,24 @@ services:
       app_net:
         ipv4_address: '172.20.0.3'
 
+  # ===============================
+  # frontend
+  # ===============================
+  frontend:
+    container_name: front
+    build: ./frontend/
+    image: frontend
+    volumes:
+      - ./frontend:/app
+    # 1. portは3000番
+    ports:
+      - 3000:3000
+    # 2. nuxtを起動
+    command: "npm run dev"
+    # 3. network接続
+    networks:
+      app_net:
+        ipv4_address: '172.20.0.4'
 
 # ===============================
 # network
