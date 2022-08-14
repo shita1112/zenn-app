@@ -17,8 +17,8 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    # localhost:3000 からのアクセスを許容する
-    origins ['http://localhost:3000']
+    # 1. 登録したドメイン（URL）を許可する
+    origins ['http://click-shita-click.click', 'http://localhost:3000']
 
     resource '*',
     headers: :any,
