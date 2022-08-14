@@ -38,5 +38,8 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+  },
+  axios: {
+    baseURL: process.env.NODE_ENV === "production" ? "https://backend.hibriiiiidge.com" : "http://localhost:5000"
   }
 }
