@@ -40,6 +40,6 @@ export default {
   build: {
   },
   axios: {
-    baseURL: process.env.NODE_ENV === "production" ? "https://backend.click-shita-click.click/" : "http://localhost:5000"
+    baseURL: process.env.NODE_ENV === "production" ? "https:backend.click-shita-click.click" : "http:localhost:5000"
   }
 }
