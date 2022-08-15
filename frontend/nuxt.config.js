@@ -38,6 +38,19 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    babel: {
+      presets({isServer}) {
+        const targets = isServer ? { node: 'current' } : { ie: 11 }
+        return [
+          [ require.resolve("@babel/preset-env"), { targets }  ]
+        ]
+      },
+      plugins: [
+        "@babel/syntax-dynamic-import",
+        "@babel/transform-runtime",
+        "@babel/transform-async-to-generator"
+      ]
+    }
   },
   axios: {
     baseURL: process.env.NODE_ENV === "production" ? "https://backend.click-shita-click.click" : "http://localhost:5000"
