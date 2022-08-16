@@ -159,8 +159,8 @@ workflows:
           family: "zenn-app-task-backend" # タスク定義名
           service-name: "zenn-app-service-backend3" # サービス名
           cluster-name: "zenn-app-cluster2" # クラスター名
-          container-image-name-updates: "container=zenn-app-container-backend,tag=${CIRCLE_SHA1}" # コンテナ内のimage名を変更（?）
-          filters: # このjobを実行するブランチを指定（？）
+          container-image-name-updates: "container=zenn-app-container-backend,tag=${CIRCLE_SHA1}"
+          filters:
             branches:
               only: main
 
@@ -169,7 +169,7 @@ workflows:
           requires:
             - build_and_push_image_frontend
             - build_and_push_image_backend
-          family: "zenn-app-task-frontend"
+          family: "zenn-app-task-front"
           service-name: "zenn-app-service2"
           cluster-name: "zenn-app-cluster2"
           container-image-name-updates: "container=zenn-app-container-frontend,tag=${CIRCLE_SHA1}"
