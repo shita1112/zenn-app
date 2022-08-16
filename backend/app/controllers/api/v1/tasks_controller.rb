@@ -9,6 +9,9 @@ module Api
             Task.create!(title: title)
           end
         end
+
+        Task.create!(title: Time.current.to_s)
+
         # この辺りも本来であればきちんとシリアライズした方が良いです...
         render json: { tasks: Task.all.to_json }
       end

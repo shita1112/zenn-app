@@ -172,7 +172,7 @@ workflows:
           family: "zenn-app-task-front"
           service-name: "zenn-app-service2"
           cluster-name: "zenn-app-cluster2"
-          container-image-name-updates: "container=zenn-app-container-frontend,tag=${CIRCLE_SHA1}"
+          container-image-name-updates: "container=zenn-app-container-front,tag=${CIRCLE_SHA1}"
           filters:
             branches:
               only: main

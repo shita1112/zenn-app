@@ -9,7 +9,7 @@
       </h2>
 
       <button @click="getSomething">
-        タスク取得
+        タスク取得 v2
       </button>
 
 
